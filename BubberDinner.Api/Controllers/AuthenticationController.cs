@@ -6,11 +6,12 @@ using BubberDinner.Application.Authentication.Commands.Register;
 using BubberDinner.Application.Authentication.Common;
 using BubberDinner.Application.Authentication.Queries.Login;
 using ErrorOr;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BubberDinner.Api.Controllers
 {
     [Route("auth")]
-    [ApiController]
+    [AllowAnonymous]
     public class AuthenticationController : ApiController
     {
         private readonly ISender _mediator;
